@@ -25,14 +25,25 @@ public class TestMaximum<T extends Comparable<T>> {
 	 * @param z
 	 * @return
 	 */
-	/*
-	 * public <T extends Comparable<T>> T maximum(T x, T y, T z) { T max = x; if
-	 * (y.compareTo(max) > 0) max = y; if (z.compareTo(max) > 0) max = z;
-	 * System.out.printf("Maximum of %s, %s and %s is %s\n\n", x, y, z, max); return
-	 * max; }
-	 */
 
-	public <T extends Comparable<T>> T maximum(T... x) {
+	public <T extends Comparable<T>> T maximum(T x, T y, T z) {
+		T max = x;
+		if (y.compareTo(max) > 0)
+			max = y;
+		if (z.compareTo(max) > 0)
+			max = z;
+		printMax(x, y, z, max);
+		return max;
+	}
+
+	/**
+	 * this method finds the maximum of variable number of parameters
+	 * 
+	 * @param <T>
+	 * @param x
+	 * @return
+	 */
+	public <T extends Comparable<T>> T max(T... x) {
 		int j = 0;
 		T max = null;
 		List<T> inputArray = new ArrayList<T>();
@@ -50,10 +61,23 @@ public class TestMaximum<T extends Comparable<T>> {
 		return max;
 	}
 
+	/**
+	 * this method prints the arguments passed
+	 * 
+	 * @param <T>
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param max
+	 */
+	private <T> void printMax(T x, T y, T z, T max) {
+		System.out.printf("Maximum of %s, %s and %s is %s\n\n", x, y, z, max);
+	}
+
 	public static void main(String args[]) {
 		TestMaximum testMaximum = new TestMaximum();
-		testMaximum.maximum(3, 4, 5,9,1);
-		testMaximum.maximum(9.2, 4.4, 5.6,9.8,5.8);
-		testMaximum.maximum("Apple", "Peach", "Banana","Zom");
+		testMaximum.maximum(3, 4, 5);
+		testMaximum.maximum(9.2, 4.4, 5.6);
+		testMaximum.maximum("Apple", "Peach", "Banana");
 	}
 }
