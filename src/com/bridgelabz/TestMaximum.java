@@ -8,9 +8,9 @@ public class TestMaximum<T extends Comparable<T>> {
 		this.y = y;
 		this.z = z;
 	}
-	
+
 	public TestMaximum() {
-		
+
 	}
 
 	/**
@@ -34,6 +34,7 @@ public class TestMaximum<T extends Comparable<T>> {
 
 	public static void main(String args[]) {
 		TestMaximum testMaximum = new TestMaximum();
-		testMaximum.maximum(3,4,5);
+		testMaximum.maximum(3, 4, 5);
+		testMaximum.maximum(9.2, 4.4, 5.6);
 	}
 }
