@@ -36,5 +36,6 @@ public class TestMaximum<T extends Comparable<T>> {
 		TestMaximum testMaximum = new TestMaximum();
 		testMaximum.maximum(3, 4, 5);
 		testMaximum.maximum(9.2, 4.4, 5.6);
+		testMaximum.maximum("Apple", "Peach", "Banana");
 	}
 }
